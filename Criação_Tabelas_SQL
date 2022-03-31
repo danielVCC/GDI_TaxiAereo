@@ -18,7 +18,7 @@ DROP TABLE passagem;
 CREATE TABLE pessoa(
     cpf VARCHAR2(15) NOT NULL,
     nome VARCHAR2(15) NOT NULL,
-    cep VARCHAR2(9) NOT NULL, 
+    cep VARCHAR2(12) NOT NULL, 
     logradouro VARCHAR2(40) NOT NULL, 
     numero NUMBER NOT NULL, 
     complemento VARCHAR2(20) NOT NULL,
