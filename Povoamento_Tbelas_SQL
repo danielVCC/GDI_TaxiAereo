@@ -1,0 +1,53 @@
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('111.222.333.44','Henrique Sakane','00000-105','Rua da esquina',705,'apto 701','Tamarineira','Pernambuco','Recife');
+
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('011.222.333.23','Daniel Victor','02200-123','Rua vicente',523,'apto 102','Baixo','Pernambuco','Olinda');
+
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('555.222.333.44','José Da Silva','45600-105','Rua agrestina',90,'apto 28','Casa forte','Rio de Janeiro','Xelti');
+
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('333.222.333.23','Arthur Santos','026768-123','Rua manto',230,'apto 378','Inter','Ceara','Olvi');
+
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('444.222.333.56','Victor Relo','045668-123','Rua Alfa',34,'apto 46','Boa vista','Pernambuco','Filo');
+
+INSERT INTO telefone(cpf_pessoa_telefone, ddd, numero) VALUES ('111.222.333.44', 81, 989898989);
+
+INSERT INTO telefone(cpf_pessoa_telefone, ddd, numero) VALUES ('011.222.333.23', 81, 987878787);
+
+INSERT INTO telefone(cpf_pessoa_telefone, ddd, numero) VALUES ('555.222.333.44', 81, 976767676);
+
+INSERT INTO telefone(cpf_pessoa_telefone, ddd, numero) VALUES ('333.222.333.23', 81, 998967548);
+
+INSERT INTO telefone(cpf_pessoa_telefone, ddd, numero) VALUES ('444.222.333.56', 81, 9983454598);
+
+INSERT INTO funcionario(cpf_funcionario, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',1300);
+
+INSERT INTO funcionario(cpf_funcionario, turno_de_trabalho,salario) VALUES ('011.222.333.23','Manhã',900);
+
+INSERT INTO funcionario(cpf_funcionario, turno_de_trabalho,salario) VALUES ('555.222.333.44','Tarde',900);
+
+INSERT INTO funcionario(cpf_funcionario, turno_de_trabalho,salario) VALUES ('333.222.333.23','Noite',3000);
+
+INSERT INTO funcionario(cpf_funcionario, turno_de_trabalho,salario) VALUES ('444.222.333.56','Noite',1100);
+
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('111.222.333.44', to_date('05/07/2020', 'dd/mm/yy'));
+
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('011.222.333.23', to_date('15/12/2015', 'dd/mm/yy'));
+
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('08/07/2020','dd/mm/yy'),3000,'111.222.333.44');
+
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('01/01/2016','dd/mm/yy'),2000,'011.222.333.23');
+
+INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('555.222.333.44',574);
+
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23','444.222.333.56',15000);
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Gulfstream G500',50,1000,700);
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Bombardier Global',60,1600,850);
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Embraer E-195',150,2000,800 );
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Dassault',15,1000,700);
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Pilatus PC-24',10,500,750);
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES('Phenom 300',450,30000,850);
