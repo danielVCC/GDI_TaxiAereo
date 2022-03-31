@@ -58,8 +58,8 @@ INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('555.222.333.44
 
 --piloto
 
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23','999.111.434.95',15000);
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('888.010.111.31','855.777.032.75',20100);
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23',null ,15000);
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('888.010.111.31',null ,20100);
 INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('999.111.434.95','333.222.333.23',7100);
 INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('855.777.032.75','888.010.111.31',11500);
 
