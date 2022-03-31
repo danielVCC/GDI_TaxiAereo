@@ -77,7 +77,7 @@ CREATE TABLE piloto(
 );
 
 CREATE TABLE modelo_aeronave(
-    tipo_aeronave VARCHAR2(15) NOT NULL,
+    tipo_aeronave VARCHAR2(20) NOT NULL,
     passageiros NUMBER NOT NULL,
     carga NUMBER NOT NULL,
     velocidade NUMBER NOT NULL,
