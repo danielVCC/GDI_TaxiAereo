@@ -69,7 +69,7 @@ CREATE TABLE atendente(
 
 CREATE TABLE piloto(
     cpf_piloto VARCHAR2(15) NOT NULL,
-    cpf_copiloto VARCHAR2(15) NOT NULL,
+    cpf_copiloto VARCHAR2(15),
     horas_de_voo NUMBER NOT NULL,
     CONSTRAINT piloto_pk PRIMARY KEY (cpf_piloto),
     CONSTRAINT piloto_cpf_atendente_fk FOREIGN KEY (cpf_piloto) REFERENCES funcionario (cpf_funcionario),
