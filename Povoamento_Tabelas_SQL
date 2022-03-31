@@ -70,7 +70,7 @@ INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES
 INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES ('Embraer E-195',150,2000,800 );
 INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES ('Dassault',15,1000,700);
 INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES ('Pilatus PC-24',10,500,750);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES ('Phenom 300',450,30000,850);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade) VALUES ('Phenom 300',50,30000,850);
 
 --aeronave
 
