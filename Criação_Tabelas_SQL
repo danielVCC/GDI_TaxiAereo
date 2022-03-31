@@ -86,7 +86,7 @@ CREATE TABLE modelo_aeronave(
 
 CREATE TABLE aeronave(
     id_aeronave NUMBER NOT NULL,
-    modelo VARCHAR2(15) NOT NULL,
+    modelo VARCHAR2(20) NOT NULL,
     CONSTRAINT aeronave_pk PRIMARY KEY (id_aeronave),
     CONSTRAINT aeronave_modelo_fk FOREIGN KEY (modelo) REFERENCES modelo_aeronave(tipo_aeronave)
 );
