@@ -28,9 +28,9 @@ INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('855.777.032.75'
 
 --funcionario
 
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',900);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('011.222.333.23','Tarde',900);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('555.222.333.44','Noite',1000);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',1200);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('011.222.333.23','Tarde',1500);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('555.222.333.44','Noite',1700);
 INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('333.222.333.23','Tarde',3000);
 INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('888.010.111.31','Noite',3000);
 INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('999.111.434.95','Tarde',2100);
