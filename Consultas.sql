@@ -1,7 +1,7 @@
 -- 1. ALTER TABLE (OK)
 -- 2. CREATE INDEX (OK)
 -- 3. INSERT INTO (OK)
--- 4. UPDATE
+-- 4. UPDATE (OK)
 -- 5. DELETE
 -- 6. SELECT FROM WHERE (OK)
 -- 7. BETWEEN (OK)
@@ -33,17 +33,22 @@ WHERE F.TURNO_DE_TRABALHO = 'Tarde';
 SELECT F.CPF_FUNCIONARIO FROM FUNCIONARIO F
 WHERE F.SALARIO BETWEEN 1000 AND 2501;
 
+-- Selecionar o nome/bairro/cidade das pessoas que moram em recife ou olinda
 SELECT P.NOME, P.BAIRRO, P.CIDADE FROM PESSOA P
 WHERE P.CIDADE IN ('Recife', 'Olinda');
 
+-- Selecionar o nome dos funcionarios que trabalham de tarde
 SELECT P.NOME
 FROM PESSOA P, FUNCIONARIO F
 WHERE P.CPF = F.CPF_FUNCIONARIO
 AND F.TURNO_DE_TRABALHO LIKE 'Tarde';
 
-SELECT P.CPF_PILOTO, P.HORAS_DE_VOO FROM PILOTO P
+--Selecionar o cpf e as horas de voo dos pilotos sem co_pilotos
+SELECT P.CPF_PILOTO, P.HORAS_DE_VOO 
+FROM PILOTO P
 WHERE P.CPF_COPILOTO IS NULL;
 
+--Selecionar o id do hangar e o cod da aeronave 
 SELECT H.ID_HANGAR, E.COD_AERONAVE
 FROM HANGAR H INNER JOIN ESTACIONA E
 ON E.COD_HANGAR = H.ID_HANGAR
