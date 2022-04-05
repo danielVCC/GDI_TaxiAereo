@@ -65,12 +65,12 @@ INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('855.777.032.75
 
 --modelo_aeronave
 
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Gulfstream G500',50,1000,700, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Bombardier Global',60,1600,850, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Embraer E-195',150,2000,800, null );
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Dassault',15,1000,700, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Pilatus PC-24',10,500,750, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, Categoria_Velociade) VALUES ('Phenom 300',50,30000,850, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Gulfstream G500',50,1000,700, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Bombardier Global',60,1600,850, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Embraer E-195',150,2000,800, null );
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Dassault',15,1000,700, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Pilatus PC-24',10,500,750, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Phenom 300',50,30000,850, null);
 
 --aeronave
 
