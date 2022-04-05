@@ -2,7 +2,7 @@
 -- 2. CREATE INDEX (OK)
 -- 3. INSERT INTO (OK)
 -- 4. UPDATE (OK)
--- 5. DELETE
+-- 5. DELETE (OK)
 -- 6. SELECT FROM WHERE (OK)
 -- 7. BETWEEN (OK)
 -- 8. IN (OK)
@@ -14,15 +14,15 @@
 -- 14. AVG (OK)
 -- 15. COUNT (OK)
 -- 16. LEFT / RIGHT / FULL OUTER JOIN (OK)
--- 17. Subconsulta com operador relacional
--- 18. Subconsulta com IN
--- 19. Subconsulta com ANY
--- 20. SUBCONSULTA COM ALL
+-- 17. Subconsulta com operador relacional (OK)
+-- 18. Subconsulta com IN (OK)
+-- 19. Subconsulta com ANY (OK)
+-- 20. SUBCONSULTA COM ALL (OK)
 -- 21. ORDER BY (OK)
 -- 22. GROUP BY (OK)
 -- 23. HAVING (OK)
 -- 24. UNION ou INTERSECT ou MINUS
--- 25. CREATE VIEW
+-- 25. CREATE VIEW (OK)
 -- 26. GRANT / REVOKE
 
 -- Selecionar funcionario com turno de Tarde
@@ -91,3 +91,28 @@ HAVING COUNT(*) > 1;
 --Deletar as passagens que tem destino em Salvador
 DELETE FROM passagem
 WHERE destino = 'Salvador';
+
+/* Pega o nome/cpf/salario de todos os pilotos que possuem salario maior que
+todos os atendentes */
+SELECT P.NOME, P.CPF, F.SALARIO
+FROM PESSOA P, FUNCIONARIO F, PILOTO PI
+WHERE PI.CPF_PILOTO = P.CPF
+AND PI.CPF_PILOTO = F.CPF_FUNCIONARIO
+AND F.SALARIO > ALL (SELECT SALARIO FROM FUNCIONARIO, ATENDENTE
+WHERE CPF_FUNCIONARIO = CPF_ATENDENTE);
+
+/* Pega o nome/cpf/salario de todos os atendentes que possuem salario maior que
+algum piloto */ 
+SELECT P.NOME, P.CPF, F.SALARIO
+FROM PESSOA P, FUNCIONARIO F, ATENDENTE A
+WHERE A.CPF_ATENDENTE = P.CPF
+AND A.CPF_ATENDENTE = F.CPF_FUNCIONARIO
+AND F.SALARIO > ANY (SELECT SALARIO FROM FUNCIONARIO, PILOTO
+WHERE CPF_FUNCIONARIO = CPF_PILOTO);
+
+CREATE VIEW altas_milhas AS
+SELECT P.NOME, P.ESTADO, T.DDD, T.NUMERO, C.NUMERO_DE_MILHAS
+FROM PESSOA P, TELEFONE T, CARTAO_DE_MILHAS C
+WHERE P.CPF = T.CPF_PESSOA_TELEFONE
+AND P.CPF = CPF_CLIENTE_CM
+AND C.NUMERO_DE_MILHAS > 2500;
