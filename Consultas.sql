@@ -87,3 +87,7 @@ FROM FUNCIONARIO F
 WHERE SALARIO BETWEEN 1000 AND 2500 
 GROUP BY F.TURNO_DE_TRABALHO
 HAVING COUNT(*) > 1;
+
+--Deletar as passagens que tem destino em Salvador
+DELETE FROM passagem
+WHERE destino = 'Salvador';
