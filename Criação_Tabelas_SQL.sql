@@ -145,7 +145,7 @@ CREATE TABLE estaciona(
 );
 
 ALTER TABLE funcionario ADD (
-    CONSTRAINT funcionario_salario_check CHECK (preco >= 2000.00)
+    CONSTRAINT funcionario_salario_check CHECK (salario >= 2000.00)
 );
 CREATE INDEX indice_funcionario_salario ON funcionario(salario);
 CREATE SEQUENCE seq_id_passagem INCREMENT BY 1 START WITH 1;
