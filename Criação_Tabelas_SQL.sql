@@ -144,4 +144,8 @@ CREATE TABLE estaciona(
     CONSTRAINT cod_hangar_fk FOREIGN KEY (cod_hangar) REFERENCES hangar(id_hangar)
 );
 
+ALTER TABLE funcionario ADD (
+    CONSTRAINT funcionario_salario_check CHECK (preco >= 2000.00)
+);
+CREATE INDEX indice_funcionario_salario ON funcionario(salario);
 CREATE SEQUENCE seq_id_passagem INCREMENT BY 1 START WITH 1;
