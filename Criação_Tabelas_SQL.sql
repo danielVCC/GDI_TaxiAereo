@@ -81,7 +81,7 @@ CREATE TABLE modelo_aeronave(
     passageiros NUMBER NOT NULL,
     carga NUMBER NOT NULL,
     velocidade NUMBER NOT NULL,
-    Categoria_Velociade VARCHAR2(20),
+    categoria_Velociade VARCHAR2(20),
     CONSTRAINT modelo_aeronave_pk PRIMARY KEY (tipo_aeronave)
 );
 
