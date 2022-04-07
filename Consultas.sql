@@ -133,10 +133,10 @@ AND C.NUMERO_DE_MILHAS > 2500;
 7. %ROWTYPE
 8. IF ELSIF
 9. CASE WHEN
-10. LOOP EXIT WHEN
+10. LOOP EXIT WHEN                          (OK)
 11. WHILE LOOP
 12. FOR IN LOOP
-13. SELECT … INTO
+13. SELECT … INTO                           (OK)
 14. CURSOR (OPEN, FETCH e CLOSE)            (OK)
 15. EXCEPTION WHEN                          (OK)                      
 16. USO DE PARÂMETROS (IN, OUT ou IN OUT)   (OK) 
