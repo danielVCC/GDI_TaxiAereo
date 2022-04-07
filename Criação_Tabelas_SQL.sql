@@ -145,6 +145,13 @@ CREATE TABLE estaciona(
     CONSTRAINT cod_hangar_fk FOREIGN KEY (cod_hangar) REFERENCES hangar(id_hangar)
 );
 
+CREATE TABLE gera (
+  id_gera NUMBER NOT NULL,
+  data_gerada DATE NOT NULL,
+  hora_gerada VARCHAR2(15) NOT NULL,
+  CONTRAINT gera_pk PRIMARY KEY (id_gera)
+);
+
 ALTER TABLE funcionario ADD (
     CONSTRAINT funcionario_salario_check CHECK (salario >= 1100.00)
 );
