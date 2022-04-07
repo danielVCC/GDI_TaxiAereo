@@ -178,3 +178,23 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20101, 'SALARIO do funcionario não pode ser menor que 0');
     END IF;
 END;
+
+-- Procedimento para aumentar o salário dos funcionários
+CREATE OR REPLACE PROCEDURE aumento_salario 
+(turno IN funcionario.turno_de_trabalho%TYPE) IS
+BEGIN
+    CASE turno
+    WHEN 'Noite' THEN
+        UPDATE funcionario
+        SET salario = 10000
+        WHERE turno_de_trabalho = 'Noite';
+    WHEN 'Tarde' THEN
+        UPDATE funcionario
+        SET salario = 6000
+        WHERE turno_de_trabalho = 'Tarde';
+    WHEN 'Manhã' THEN
+        UPDATE funcionario
+        SET salario = 4000
+        WHERE turno_de_trabalho = 'Manhã';
+    END CASE;
+END;
