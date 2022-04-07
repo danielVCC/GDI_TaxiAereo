@@ -112,6 +112,12 @@ INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_age
 INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',330011,0121);
 INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',330011,0139);
 
+--gera
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (1234,to_date('09/04/2022','dd/mm/yy'),'9:30');
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (4321,to_date('10/05/2022','dd/mm/yy'),'14:00');
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (5555,to_date('02/06/2022','dd/mm/yy'),'7:30');
+
+
 --estaciona
 
 INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (00010,101);
