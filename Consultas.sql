@@ -127,9 +127,9 @@ AND C.NUMERO_DE_MILHAS > 2500;
 1. USO DE RECORD
 2. USO DE ESTRUTURA DE DADOS DO TIPO TABLE
 3. BLOCO ANÔNIMO
-4. CREATE PROCEDURE
-5. CREATE FUNCTION
-6. %TYPE
+4. CREATE PROCEDURE                         (OK)
+5. CREATE FUNCTION                          (OK)
+6. %TYPE                                    (OK)
 7. %ROWTYPE
 8. IF ELSIF
 9. CASE WHEN
@@ -137,14 +137,37 @@ AND C.NUMERO_DE_MILHAS > 2500;
 11. WHILE LOOP
 12. FOR IN LOOP
 13. SELECT … INTO
-14. CURSOR (OPEN, FETCH e CLOSE)
-15. EXCEPTION WHEN
-16. USO DE PARÂMETROS (IN, OUT ou IN OUT)
+14. CURSOR (OPEN, FETCH e CLOSE)            (OK)
+15. EXCEPTION WHEN                          (OK)                      
+16. USO DE PARÂMETROS (IN, OUT ou IN OUT)   (OK) 
 17. CREATE OR REPLACE PACKAGE
 18. CREATE OR REPLACE PACKAGE BODY
 19. CREATE OR REPLACE TRIGGER (COMANDO)
-20. CREATE OR REPLACE TRIGGER (LINHA) (OK)
+20. CREATE OR REPLACE TRIGGER (LINHA)       (OK)
 */
+
+-- Recuperando as informações de copiloto/piloto
+CREATE OR REPLACE PROCEDURE info_piloto_copiloto IS
+v_cpf_pilot piloto.cpf_piloto%TYPE;
+v_cpf_cop piloto.cpf_copiloto%TYPE;
+
+CURSOR c_pilot IS
+SELECT cpf_piloto, cpf_copiloto
+FROM piloto p;
+
+BEGIN
+    OPEN c_pilot;
+    LOOP
+        FETCH c_pilot INTO v_cpf_pilot, v_cpf_cop;
+        EXIT WHEN c_pilot%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Piloto: '|| ' ' ||
+        TO_CHAR(v_cpf_pilot) || ' ' || TO_CHAR(v_cpf_cop));
+    END LOOP;
+    CLOSE c_pilot;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        INSERT INTO log_table (info) VALUES ('Piloto sem Copiloto');
+END;
 
 -- Trigger (linha) para verificação de valor dos salarios inseridos em funcionario
 CREATE OR REPLACE TRIGGER salario_valor
