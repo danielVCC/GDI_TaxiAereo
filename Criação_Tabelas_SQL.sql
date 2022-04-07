@@ -147,9 +147,9 @@ CREATE TABLE estaciona(
 
 CREATE TABLE gera (
   id_gera NUMBER NOT NULL,
-  data_gerada DATE NOT NULL,
-  hora_gerada VARCHAR2(15) NOT NULL,
-  CONTRAINT gera_pk PRIMARY KEY (id_gera)
+  data_gera DATE NOT NULL,
+  hora_gera VARCHAR2(15) NOT NULL,
+  CONSTRAINT gera_pk PRIMARY KEY (id_gera)
 );
 
 ALTER TABLE funcionario ADD (
