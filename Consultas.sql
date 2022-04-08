@@ -1,29 +1,4 @@
--- 1. ALTER TABLE (OK)
--- 2. CREATE INDEX (OK)
--- 3. INSERT INTO (OK)
--- 4. UPDATE (OK)
--- 5. DELETE (OK)
--- 6. SELECT FROM WHERE (OK)
--- 7. BETWEEN (OK)
--- 8. IN (OK)
--- 9. LIKE (OK)
--- 10. IS NULL / IS NOT NULL (OK)
--- 11. INNER JOIN (OK)
--- 12. MAX (OK)
--- 13. MIN (OK)
--- 14. AVG (OK)
--- 15. COUNT (OK)
--- 16. LEFT / RIGHT / FULL OUTER JOIN (OK)
--- 17. Subconsulta com operador relacional (OK)
--- 18. Subconsulta com IN (OK)
--- 19. Subconsulta com ANY (OK)
--- 20. SUBCONSULTA COM ALL (OK)
--- 21. ORDER BY (OK)
--- 22. GROUP BY (OK)
--- 23. HAVING (OK)
--- 24. UNION ou INTERSECT ou MINUS (OK)
--- 25. CREATE VIEW (OK)
--- 26. GRANT / REVOKE
+-- Consultas
 
 -- Selecionar funcionario com turno de Tarde
 SELECT F.SALARIO FROM FUNCIONARIO F
@@ -123,28 +98,6 @@ WHERE P.CPF = T.CPF_PESSOA_TELEFONE
 AND P.CPF = CPF_CLIENTE_CM
 AND C.NUMERO_DE_MILHAS > 2500;
 
-/*
-1. USO DE RECORD
-2. USO DE ESTRUTURA DE DADOS DO TIPO TABLE
-3. BLOCO ANÔNIMO
-4. CREATE PROCEDURE                         (OK)
-5. CREATE FUNCTION                          (OK)
-6. %TYPE                                    (OK)
-7. %ROWTYPE
-8. IF ELSIF
-9. CASE WHEN
-10. LOOP EXIT WHEN                          (OK)
-11. WHILE LOOP
-12. FOR IN LOOP
-13. SELECT … INTO                           (OK)
-14. CURSOR (OPEN, FETCH e CLOSE)            (OK)
-15. EXCEPTION WHEN                          (OK)                      
-16. USO DE PARÂMETROS (IN, OUT ou IN OUT)   (OK) 
-17. CREATE OR REPLACE PACKAGE
-18. CREATE OR REPLACE PACKAGE BODY
-19. CREATE OR REPLACE TRIGGER (COMANDO)
-20. CREATE OR REPLACE TRIGGER (LINHA)       (OK)
-*/
 
 -- Recuperando as informações de copiloto/piloto
 CREATE OR REPLACE PROCEDURE info_piloto_copiloto IS
