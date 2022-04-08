@@ -6,7 +6,7 @@ Gerenciamento de Dados e Informação - 2021.2
 - [x] Template Minimundo e EER
 - [x] Esquema Relacional Normalizado
 - [x] Scripts de criação e de povoamento SQL
-- [ ] Consultas sobre tabelas relacionais
+- [x] Consultas sobre tabelas relacionais
 
 </br>
 
