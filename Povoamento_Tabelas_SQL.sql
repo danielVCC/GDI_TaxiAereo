@@ -92,6 +92,7 @@ INSERT INTO hangar (id_hangar,capacidade) VALUES (202,7);
 INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (000001,to_date('08/05/2022','dd/mm/yy'),20);
 INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (220002,to_date('27/08/2022','dd/mm/yy'),50);
 INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (330011,to_date('30/09/2022','dd/mm/yy'),10);
+INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (000002,to_date('15/05/2022','dd/mm/yy'),0);
 
 --agendamento
 
@@ -109,9 +110,10 @@ INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,da
 
 --realiza
 
-INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('222.333.444.57',000001,0103);
-INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',330011,0121);
-INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',330011,0139);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('222.333.444.57',000001,seq_id_agendamento.nextval);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',330011,seq_id_agendamento.nextval);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',330011,seq_id_agendamento.nextval);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('444.222.333.56',000002,seq_id_agendamento.nextval);
 
 --gera
 INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (1234,to_date('09/04/2022','dd/mm/yy'),'9:30');
