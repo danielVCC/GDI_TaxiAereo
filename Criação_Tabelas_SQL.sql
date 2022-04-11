@@ -160,3 +160,5 @@ CREATE TABLE log_table (
 );
 CREATE INDEX indice_funcionario_salario ON funcionario(salario);
 CREATE SEQUENCE seq_id_passagem INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE seq_id_agendamento INCREMENT BY 1 START WITH 1;
+
