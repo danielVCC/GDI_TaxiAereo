@@ -1,8 +1,22 @@
 -- Consultas
 
--- Selecionar funcionario com turno de Tarde
+-- Selecionar salario do funcionario com turno de Tarde
 SELECT F.SALARIO FROM FUNCIONARIO F
 WHERE F.TURNO_DE_TRABALHO = 'Tarde';
+
+-- Selecionar o nome do atendente que gerou a passagem de 10:00 
+SELECT p.nome FROM pessoa p, agendamento a, passagem pa, atendente at
+WHERE p.cpf = at.cpf_atendente
+AND at.cpf_atendente = a.cpf_atendente_agendamento
+AND id_agendamento = id_passagem
+AND HORARIO_PASSAGEM = '10:00';
+
+-- Selecionar o nome do cliente que gerou a passagem de 10:00 
+SELECT p.nome FROM pessoa p, agendamento a, passagem pa, cliente c
+WHERE p.cpf = c.cpf_cliente
+AND c.cpf_cliente = a.cpf_cliente_agendamento
+AND a.id_agendamento = pa.id_passagem
+AND pa.HORARIO_PASSAGEM = '11:30';
 
 -- Selecionar os funcionarios com salarios entre 1000 e 2501N
 SELECT F.CPF_FUNCIONARIO FROM FUNCIONARIO F
