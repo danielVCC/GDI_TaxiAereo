@@ -95,16 +95,17 @@ INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (33001
 
 --agendamento
 
-INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('222.333.444.57','111.222.333.44','10:43',0103,to_date('25/02/2022','dd/mm/yy'),300);
-INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('105.210.555.70','011.222.333.23','13:35',0121,to_date('10/03/2022','dd/mm/yy'),400);
-INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('777.022.333.88','011.222.333.23','16:20',0139,to_date('18/03/2022','dd/mm/yy'),600);
-INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('444.222.333.56','555.222.333.44','19:50',0217,to_date('31/03/2022','dd/mm/yy'),1300);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('222.333.444.57','111.222.333.44','10:43',seq_id_agendamento.nextval,to_date('25/02/2022','dd/mm/yy'),300);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('105.210.555.70','011.222.333.23','13:35',seq_id_agendamento.nextval,to_date('10/03/2022','dd/mm/yy'),400);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('777.022.333.88','011.222.333.23','16:20',seq_id_agendamento.nextval,to_date('18/03/2022','dd/mm/yy'),600);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('444.222.333.56','555.222.333.44','19:50',seq_id_agendamento.nextval,to_date('31/03/2022','dd/mm/yy'),1300);
 
 --passagem
 
 INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (seq_id_passagem.nextval,'Recife','Salvador',to_date('09/04/2022','dd/mm/yy'),'10:00',to_date('12/04/2022','dd/mm/yy'));
 INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (seq_id_passagem.nextval,'Recife','Curitiba',to_date('10/05/2022','dd/mm/yy'),'15:00',to_date('15/06/2022','dd/mm/yy'));
-INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (seq_id_passagem.nextval,'Recife','Brasilia',to_date('02/06/2022','dd/mm/yy'),'09:30',to_date('04/06/2022','dd/mm/yy'));
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (seq_id_passagem.nextval,'Recife','Brasilia',to_date('02/06/2022','dd/mm/yy'),'09:30',to_date('04/10/2022','dd/mm/yy'));
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (seq_id_passagem.nextval,'Recife','Brasilia',to_date('02/06/2022','dd/mm/yy'),'11:30',to_date('16/09/2022','dd/mm/yy'));
 
 --realiza
 
