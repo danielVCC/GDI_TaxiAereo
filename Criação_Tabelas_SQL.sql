@@ -41,7 +41,6 @@ CREATE TABLE funcionario(
     turno_de_trabalho VARCHAR2(14),
     salario NUMBER NOT NULL,
     CONSTRAINT funcionario_pk PRIMARY KEY (cpf_funcionario),
-    CONSTRAINT cargo_salario_minimo CHECK (salario >= 1100.00),
     CONSTRAINT funcionario_cpf_pessoa_fk FOREIGN KEY (cpf_funcionario) REFERENCES pessoa(cpf)
 );
 
