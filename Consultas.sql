@@ -91,6 +91,22 @@ AND PI.CPF_PILOTO = F.CPF_FUNCIONARIO
 AND F.SALARIO > ALL (SELECT SALARIO FROM FUNCIONARIO, ATENDENTE
 WHERE CPF_FUNCIONARIO = CPF_ATENDENTE);
 
+-- SELECIONAR NOME DAS PESSOAS QUE TEM SUAS VIAGENS COM O DESTINO BRASILIA
+SELECT p.nome FROM pessoa p, passagem pg, atendente a, agendamento ag
+WHERE p.cpf = a.cpf_atendente
+AND a.cpf_atendente = ag.cpf_atendente_agendamento
+AND ag.id_agendamento = pg.id_passagem
+AND pg.destino = 'Brasilia';
+
+-- SELECIONAR NOME DAS PESSOAS QUE TEM SUAS VIAGENS AGENDADAS PELO ATENTENDE DANIEL E QUE TEM O DESTINO BRASILIA
+SELECT p.nome FROM pessoa p, pessoa p2, passagem pg, atendente a, agendamento ag
+WHERE p.cpf = ag.cpf_cliente_agendamento
+AND p2.cpf = a.cpf_atendente
+AND p2.nome = 'Daniel Victor'
+AND a.cpf_atendente = ag.cpf_atendente_agendamento
+AND ag.id_agendamento = pg.id_passagem
+AND pg.destino = 'Brasilia';
+
 /* Pega o nome/cpf/salario de todos os atendentes que possuem salario maior que
 algum piloto */ 
 SELECT P.NOME, P.CPF, F.SALARIO
