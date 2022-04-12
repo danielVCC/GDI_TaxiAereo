@@ -13,7 +13,7 @@ DROP TABLE agendamento;
 DROP TABLE realiza;
 DROP TABLE estaciona;
 DROP TABLE passagem;
-
+DROP TABLE gera;
 
 CREATE TABLE pessoa(
     cpf VARCHAR2(15) NOT NULL,
