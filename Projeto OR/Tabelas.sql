@@ -15,14 +15,14 @@ DROP TABLE estaciona;
 DROP TABLE passagem;
 DROP TABLE gera;
 
--- ✅ --
+-- ⚠️ nao passou kk --
 CREATE TABLE tb_telefone OF tp_telefone(
     cpf PRIMARY KEY,
     ddd NOT NULL,
     numero NOT NULL
 );
 
--- ✅ --
+-- ⚠️ nao passou kk --
 CREATE TABLE tb_funcionario OF tp_funcionario(
     cpf PRIMARY KEY,
     turno_de_trabalho NOT NULL,
@@ -35,20 +35,20 @@ CREATE TABLE tb_cliente of tp_cliente(
     data_cadastro NOT NULL
 );
 
--- ✅ --
+-- ⚠️ nao passou --
 CREATE TABLE tb_cartao_de_milhas OF tp_cartao_de_milhas(
     cpf PRIMARY KEY, 
     data_de_emissao NOT NULL,
     numero_de_milhas NOT NULL,
 );
 
--- ✅ --
+-- ⚠️ nao passou --
 CREATE TABLE tb_atendente OF tp_atendente(
     cpf PRIMARY KEY,
     clientes_atendidos NOT NULL
 );
 
--- ✅ --
+-- ⚠️ nao passou --
 CREATE TABLE tb_piloto OF tp_piloto(
     cpf PRIMARY KEY,
     cpf_copiloto WITH ROWID REFERENCES tb_piloto,
@@ -83,12 +83,12 @@ CREATE TABLE tb_promocao OF tp_promocao(
     desconto NOT NULL
 );
 
--- ✅ --
+-- ⚠️ nao passou --
 CREATE TABLE tb_agendamento OF tp_agendamento(
     cpf_cliente_agendamento WITH ROWID REFERENCES tb_cliente NOT NULL,
     cpf_atendente_agendamento WITH ROWID REFERENCES tb_atendente NOT NULL,
     hora NOT NULL,
-    id_agendamento PRIMARY KEYL,
+    id_agendamento PRIMARY KEY,
     data_agendamento NOT NULL,
     milhas_geradas NOT NULL
 );
@@ -103,14 +103,14 @@ CREATE TABLE tb_passagem OF tp_passagem(
     data_de_volta NOT NULL
 );
 
---⚠️--
+--⚠️ nao passou --
 CREATE TABLE tb_realiza OF tp_realiza(
     cpf_cliente_realiza_promo PRIMARY KEY, --⚠️ WITH ROWID REFERENCES tb_cliente NOT NULL ?--
     codigo_promocional_realiza SCOPE IS tb_promocao,
     id_agendamento_realiza WITH ROWID REFERENCES tb_agendamento NOT NULL
 );
 
---⚠️--
+--⚠️ nao passou --
 CREATE TABLE tb_estaciona OF tp_estaciona(
     cod_aeronave PRIMARY KEY,  --⚠️ WITH ROWID REFERENCES tb_aeronave NOT NULL ?--
     cod_hangar WITH ROWID REFERENCES tb_hangar NOT NULL
