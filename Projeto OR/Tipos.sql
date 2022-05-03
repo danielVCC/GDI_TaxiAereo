@@ -1,7 +1,7 @@
 -- TELEFONE (USANDO VARRAY) --
 -- TIPO VARRAY QUE POSSIBILITA INSERÇÃO E ARMAZENAMENTO DE MÚLTIPLOS TELEFONES --
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
-    
+    cpf_pessoa_telefone VARCHAR2 (12)
     ddd NUMBER,
     numero NUMBER
 
@@ -238,7 +238,7 @@ CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
 /
 
 -- PASSAGEM --
-CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+CREATE OR REPLACE TYPE tp_passagem AS OBJECT (
     
     id_passagem NUMBER,
     origem VARCHAR2(20),
@@ -252,7 +252,7 @@ CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
 /
 
 -- REALIZA --
-CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+CREATE OR REPLACE TYPE tp_realiza AS OBJECT (
     
     cpf_cliente_realiza_promo VARCHAR2(15),
     codigo_promocional_realiza NUMBER,
@@ -263,7 +263,7 @@ CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
 /
 
 -- ESTACIONA --
-CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+CREATE OR REPLACE TYPE tp_estaciona AS OBJECT (
     
     cod_aeronave NUMBER,
     cod_hangar NUMBER
@@ -272,8 +272,8 @@ CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
 
 /
 
--- ESTACIONA --
-CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+-- GERA --
+CREATE OR REPLACE TYPE tp_gera AS OBJECT (
     
   id_gera NUMBER,
   data_gera DATE,
