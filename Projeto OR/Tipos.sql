@@ -44,7 +44,6 @@ CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 
 );
 
-
 /
 
 -- CLIENTE --
@@ -136,22 +135,30 @@ CREATE OR REPLACE TYPE tp_piloto UNDER tp_funcionario (
 
 /
 
+-- CARTAO DE MILHAS --
+CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
+   
+    data_de_emissao DATE,
+    numero_de_milhas NUMBER,
+    cliente REF tp_cliente,
+
+);
+
+
+/
+
 -- ADICIONANDO DATA DE NASCIMENTO EM PESSOA --
 -- CASCADE: PROPAGA A MUDANÇA PARA TIPOS DEPENDENTES -- 
 ALTER TYPE tp_pessoa ADD ATTRIBUTE (data_nascimento DATE) CASCADE;
 
 /
 
--- CUPOM --
--- PODE OU NÃO PERTENCER (REFERENCIAR) A UM CLIENTE --
+-- PROMOÇÃO --
 CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
     
     codigo_promocional NUMBER,
     data_de_termino DATE,
-    desconto NUMBER
-
-    cliente REF tp_cliente,
-
+    desconto NUMBER,
     ORDER MEMBER FUNCTION comparaDesconto (SELF IN OUT NOCOPY tp_promocao, c tp_promocao) RETURN NUMBER
 
 );
@@ -186,9 +193,29 @@ CREATE OR REPLACE TYPE tp_auxilia AS OBJECT (
 
 /
 
+-- MODELO AERONAVE --
+CREATE OR REPLACE TYPE tp_modelo_aeronave AS OBJECT (
+    
+    tipo_aeronave VARCHAR2(20),
+    passageiros NUMBER,
+    carga NUMBER,
+    velocidade NUMBER,
+    categoria_Velociade VARCHAR2(20)
+);
+
+/
+
+-- AERONAVE --
+CREATE OR REPLACE TYPE tp_aeronave AS OBJECT (
+    
+    id_aeronave NUMBER,
+    modelo REF tp_modelo_aeronave,
+);
+
+/
+
 -- HANGAR --
--- TERÁ APENAS SEU TIPO CRIADO, POIS É UMA NESTED TABLE DE RESTAURANTE --
-CREATE OR REPLACE TYPE tp_prato AS OBJECT (
+CREATE OR REPLACE TYPE tp_hangar AS OBJECT (
 
     nome_prato VARCHAR2 (50),
     preco NUMBER,
@@ -196,6 +223,66 @@ CREATE OR REPLACE TYPE tp_prato AS OBJECT (
     codigo NUMBER
 
 );
+
+/
+
+-- AGENDAMENTO --
+CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+    
+    cpf_cliente_agendamento VARCHAR2(15),
+    cpf_atendente_agendamento VARCHAR2(15),
+    hora VARCHAR2(10),
+    id_agendamento NUMBER,
+    data_agendamento DATE,
+    milhas_geradas NUMBER
+);
+
+/
+
+-- PASSAGEM --
+CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+    
+    id_passagem NUMBER,
+    origem VARCHAR2(20),
+    destino VARCHAR2(20),
+    data_de_ida DATE,
+    horario_passagem VARCHAR2(10),
+    data_de_volta DATE
+
+);
+
+/
+
+-- REALIZA --
+CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+    
+    cpf_cliente_realiza_promo VARCHAR2(15),
+    codigo_promocional_realiza NUMBER,
+    id_agendamento_realiza NUMBER
+
+);
+
+/
+
+-- ESTACIONA --
+CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+    
+    cod_aeronave NUMBER,
+    cod_hangar NUMBER
+
+);
+
+/
+
+-- ESTACIONA --
+CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
+    
+  id_gera NUMBER,
+  data_gera DATE,
+  hora_gera VARCHAR2(15)
+
+);
+
 
 
 
@@ -223,4 +310,3 @@ CREATE OR REPLACE TYPE tp_prato AS OBJECT (
 20. NESTED TABLE 
 
 */
-
