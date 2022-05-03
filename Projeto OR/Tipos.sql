@@ -6,8 +6,8 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     
     cpf VARCHAR2(15),
     nome VARCHAR2(40),
-    telefone tp_telefone,
-    endereco tp_endereco,
+    telefone tp_telefone, -- REF tp_telefone ? --
+    endereco tp_endereco, -- REF tp_endereco ? --
     MEMBER PROCEDURE print_info
     
 ) NOT FINAL NOT INSTANTIABLE;
@@ -217,10 +217,8 @@ CREATE OR REPLACE TYPE tp_aeronave AS OBJECT (
 -- HANGAR --
 CREATE OR REPLACE TYPE tp_hangar AS OBJECT (
 
-    nome_prato VARCHAR2 (50),
-    preco NUMBER,
-    categoria VARCHAR2 (30),
-    codigo NUMBER
+    id_hangar NUMBER,
+    capacidade NUMBER,
 
 );
 
