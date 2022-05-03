@@ -1,19 +1,3 @@
--- TIPO PESSOA --
--- TIPO NOT FINAL (PERMITE CRIAÇÃO DE SUBTIPO E NÃO É POSSÍVEL INSERIR DADOS, POIS É APENAS UM MOLDE) -- 
--- E NOT INSTANTIABLE (TIPOS ABSTRADOS: NÃO PODEM TER INSTÂNCIAS DE OBJETOS CRIADAS EM TABELAS) --
--- CLIENTE E FUNCIONÁRIO HERDAM DE PESSOA --
-CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
-    
-    cpf VARCHAR2(15),
-    nome VARCHAR2(40),
-    telefone tp_telefone, -- REF tp_telefone ? --
-    endereco tp_endereco, -- REF tp_endereco ? --
-    MEMBER PROCEDURE print_info
-    
-) NOT FINAL NOT INSTANTIABLE;
-
-/
-
 -- TELEFONE (USANDO VARRAY) --
 -- TIPO VARRAY QUE POSSIBILITA INSERÇÃO E ARMAZENAMENTO DE MÚLTIPLOS TELEFONES --
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
@@ -43,6 +27,22 @@ CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
     cidade VARCHAR2 (20)
 
 );
+
+/
+
+-- TIPO PESSOA --
+-- TIPO NOT FINAL (PERMITE CRIAÇÃO DE SUBTIPO E NÃO É POSSÍVEL INSERIR DADOS, POIS É APENAS UM MOLDE) -- 
+-- E NOT INSTANTIABLE (TIPOS ABSTRADOS: NÃO PODEM TER INSTÂNCIAS DE OBJETOS CRIADAS EM TABELAS) --
+-- CLIENTE E FUNCIONÁRIO HERDAM DE PESSOA --
+CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
+    
+    cpf VARCHAR2(15),
+    nome VARCHAR2(40),
+    telefone tp_telefone, -- REF tp_telefone ? --
+    endereco tp_endereco, -- REF tp_endereco ? --
+    MEMBER PROCEDURE print_info
+    
+) NOT FINAL NOT INSTANTIABLE;
 
 /
 
@@ -100,6 +100,7 @@ END;
 
 /
 
+--⚠️ nao passou no live SQL--
 -- ATENDENTE --
 -- HERDA DE FUNCIONÁRIO --
 CREATE OR REPLACE TYPE tp_atendente UNDER tp_funcionario (
@@ -110,8 +111,7 @@ CREATE OR REPLACE TYPE tp_atendente UNDER tp_funcionario (
 
 /
 
-/
-
+--⚠️ nao passou no live SQL--
 -- QNTD_CLIENTES_ATENDIDOS: FINAL MAP MEMBER QUE RETORNA A QUANTIDADE DE TELEFONES CADASTRADOS DE UM CLIENTE --
 CREATE OR REPLACE TYPE BODY tp_atendente AS 
 FINAL MAP MEMBER FUNCTION qntd_clientes_atendidos RETURN NUMBER IS
@@ -140,7 +140,7 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
    
     data_de_emissao DATE,
     numero_de_milhas NUMBER,
-    cliente REF tp_cliente,
+    cliente REF tp_cliente
 
 );
 
@@ -209,7 +209,7 @@ CREATE OR REPLACE TYPE tp_modelo_aeronave AS OBJECT (
 CREATE OR REPLACE TYPE tp_aeronave AS OBJECT (
     
     id_aeronave NUMBER,
-    modelo REF tp_modelo_aeronave,
+    modelo REF tp_modelo_aeronave
 );
 
 /
@@ -218,7 +218,7 @@ CREATE OR REPLACE TYPE tp_aeronave AS OBJECT (
 CREATE OR REPLACE TYPE tp_hangar AS OBJECT (
 
     id_hangar NUMBER,
-    capacidade NUMBER,
+    capacidade NUMBER
 
 );
 
