@@ -15,15 +15,13 @@ DROP TABLE estaciona;
 DROP TABLE passagem;
 DROP TABLE gera;
 
--- ✅ --
-CREATE OR REPLACE TYPE tp_telefone AS OBJECT(
-    cpf VARCHAR2(14),
-    ddd VARCHAR2(2),
-    numero VARCHAR2(10)
+-- ⚠️ nao passou kk --
+ CREATE TABLE tb_telefone OF tp_telefone(
+     cpf PRIMARY KEY,
+     ddd NOT NULL,
+     numero NOT NULL
 );
--- ✅ --
-/
-CREATE OR REPLACE TYPE tp_telefones AS VARRAY(5) OF tp_telefone;
+
 /
 
 -- ⚠️ nao passou kk --
