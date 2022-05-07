@@ -272,8 +272,8 @@ CREATE OR REPLACE TYPE tp_passagem AS OBJECT (
 CREATE OR REPLACE TYPE tp_realiza AS OBJECT (
     
     cpf_cliente_realiza_promo VARCHAR2(15),
-    codigo_promocional_realiza NUMBER,
-    id_agendamento_realiza NUMBER
+    codigo_promocional_realiza REF tp_promocao,
+    id_agendamento_realiza REF tp_agendamento
 
 );
 
@@ -283,7 +283,7 @@ CREATE OR REPLACE TYPE tp_realiza AS OBJECT (
 CREATE OR REPLACE TYPE tp_estaciona AS OBJECT (
     
     cod_aeronave NUMBER,
-    cod_hangar NUMBER
+    cod_hangar REF tp_hangar
 
 );
 
