@@ -12,7 +12,7 @@ Gerenciamento de Dados e Informação - 2021.2
 </br>
 
 ### Atividades - Projeto OR
-- [ ] Scripts de criação e de povoamento OR
+- [x] Scripts de criação e de povoamento OR
 - [ ] Consultas sobre tabelas 
 
 </br>
