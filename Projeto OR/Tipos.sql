@@ -67,6 +67,7 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 
     turno_de_trabalho VARCHAR2(14),
     salario NUMBER,
+    cpf_copiloto REF tp_funcionario,
     MEMBER FUNCTION renda_anual RETURN NUMBER,
     OVERRIDING MEMBER PROCEDURE print_info,
     CONSTRUCTOR FUNCTION tp_funcionario (x1 tp_funcionario) RETURN SELF AS RESULT
