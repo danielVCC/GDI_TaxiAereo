@@ -64,7 +64,7 @@ CREATE TABLE tb_modelo_aeronave OF tp_modelo_aeronave(
     passageiros NOT NULL,
     carga NOT NULL,
     velocidade NOT NULL,
-    categoria_Velociade NOT NULL
+    categoria_Velociade NULL
 );
 /
 -- ✅ --
