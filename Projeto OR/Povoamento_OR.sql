@@ -1,47 +1,33 @@
---pessoa
-
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('111.222.333.44','Henrique Sakane','00000-105','Rua da esquina',705,'apto 701','Tamarineira','Pernambuco','Recife');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('011.222.333.23','Daniel Victor','02200-123','Rua vicente',523,'apto 102','Baixo','Pernambuco','Olinda');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('555.222.333.44','José Da Silva','45600-105','Rua agrestina',90,'apto 28','Casa forte','Rio de Janeiro','Xelti');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('333.222.333.23','Arthur Santos','026768-123','Rua manto',230,'apto 378','Inter','Ceara','Olvi');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('444.222.333.56','Victor Relo','045668-123','Rua Alfa',34,'apto 46','Boa vista','Pernambuco','Filo');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('222.333.444.57','João Almeida','745760-134','Rua Alcântara',127,'apto 87','Madalena','Pernambuco','Recife');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('105.210.555.70','Fabio Carvalho','502788-013','Rua Benfica',108,'apto 40','Derby','Pernambuco','Recife');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('777.022.333.88','André Souza','905878-145','Rua América',35,'apto 63','Bela Vista','Pernambuco','Caruaru');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('888.010.111.31','Carlos Costa','301067-301','Rua Colombo',107,'apto 80','Carajas','Sao Paulo','Campinas');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('999.111.434.95','Bruno Goes','578003-403','Rua Omega',205,'apto 50','Nova Asa','Alagoas','Arapiraca');
-INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('855.777.032.75','Paulo Lima','487503-362','Rua Beta',302,'apto 13','Pombos','Pará','Belém');
-
 --telefone
 
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('111.222.333.44', 81, 989898989);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('011.222.333.23', 81, 987878787);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('555.222.333.44', 21, 976767676);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('333.222.333.23', 88, 998967548);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('444.222.333.56', 81, 998345459);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('222.333.444.57', 81, 998735459);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('105.210.555.70', 81, 979055705);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('777.022.333.88', 81, 998305781);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('888.010.111.31', 11, 999900123);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('999.111.434.95', 82, 988057430);
-INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('855.777.032.75', 91, 979568708);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('111.222.333.44', 81, 989898989);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('011.222.333.23', 81, 987878787);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('555.222.333.44', 21, 976767676);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('333.222.333.23', 88, 998967548);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('444.222.333.56', 81, 998345459);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('222.333.444.57', 81, 998735459);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('105.210.555.70', 81, 979055705);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('777.022.333.88', 81, 998305781);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('888.010.111.31', 11, 999900123);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('999.111.434.95', 82, 988057430);
+INSERT INTO tb_telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('855.777.032.75', 91, 979568708);
 
 --funcionario
 
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',1200);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('011.222.333.23','Tarde',1500);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('555.222.333.44','Noite',1700);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('333.222.333.23','Tarde',3000);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('888.010.111.31','Noite',3000);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('999.111.434.95','Tarde',2100);
-INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('855.777.032.75','Manhã',2100);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',1200);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('011.222.333.23','Tarde',1500);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('555.222.333.44','Noite',1700);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('333.222.333.23','Tarde',3000);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('888.010.111.31','Noite',3000);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('999.111.434.95','Tarde',2100);
+INSERT INTO tb_funcionario (cpf, turno_de_trabalho,salario) VALUES ('855.777.032.75','Manhã',2100);
 
 --cliente
 
-INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('222.333.444.57', to_date('05/07/2020', 'dd/mm/yy'));
-INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('105.210.555.70', to_date('15/12/2015', 'dd/mm/yy'));
-INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('777.022.333.88', to_date('20/10/2018', 'dd/mm/yy'));
-INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('444.222.333.56', to_date('18/11/2019', 'dd/mm/yy'));
+INSERT INTO tb_cliente (cpf,data_cadastro) VALUES ('222.333.444.57', to_date('05/07/2020', 'dd/mm/yy'));
+INSERT INTO tb_cliente (cpf,data_cadastro) VALUES ('105.210.555.70', to_date('15/12/2015', 'dd/mm/yy'));
+INSERT INTO tb_cliente (cpf,data_cadastro) VALUES ('777.022.333.88', to_date('20/10/2018', 'dd/mm/yy'));
+INSERT INTO tb_cliente (cpf,data_cadastro) VALUES ('444.222.333.56', to_date('18/11/2019', 'dd/mm/yy'));
 
 --cartao_de_milhas
 
