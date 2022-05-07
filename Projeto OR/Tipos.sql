@@ -243,8 +243,8 @@ CREATE OR REPLACE TYPE tp_hangar AS OBJECT (
 -- AGENDAMENTO --
 CREATE OR REPLACE TYPE tp_agendamento AS OBJECT (
     
-    cpf_cliente_agendamento VARCHAR2(15),
-    cpf_atendente_agendamento VARCHAR2(15),
+    cpf_cliente_agendamento REF tp_cliente,
+    cpf_atendente_agendamento REF tp_funcionario,
     hora VARCHAR2(10),
     id_agendamento NUMBER,
     data_agendamento DATE,
