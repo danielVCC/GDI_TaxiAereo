@@ -57,7 +57,7 @@ CREATE OR REPLACE TYPE tp_cliente UNDER tp_pessoa (
 
     data_cadastro DATE
 
-);
+)NOT FINAL;
 
 /
 -- ✅ --
@@ -143,7 +143,7 @@ CREATE OR REPLACE TYPE tp_piloto UNDER tp_funcionario (
 
 -- ✅ --
 -- CARTAO DE MILHAS --
-CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
+CREATE OR REPLACE TYPE tb_cartao_de_milhas UNDER tp_cliente (
    
     data_de_emissao DATE,
     numero_de_milhas NUMBER,
