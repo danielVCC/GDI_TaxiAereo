@@ -15,9 +15,9 @@ DROP TABLE estaciona;
 DROP TABLE passagem;
 DROP TABLE gera;
 
--- ⚠️ nao passou kk --
+-- ✅ --
  CREATE TABLE tb_telefone OF tp_telefone(
-     cpf PRIMARY KEY,
+     cpf_pessoa_telefone PRIMARY KEY,
      ddd NOT NULL,
      numero NOT NULL
 );
