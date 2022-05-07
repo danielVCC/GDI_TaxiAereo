@@ -97,9 +97,9 @@ INSERT INTO tb_passagem (id_passagem,origem,destino,data_de_ida,horario_passagem
 
 --realiza
 
-INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('222.333.444.57',000001,0091);
-INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',330011,1235);
-INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',330011,1515);
+INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('222.333.444.57',(SELECT REF(f) FROM tb_promocao f WHERE f.codigo_promocional = 000001),(SELECT REF(f) FROM tb_agendamento f WHERE f.id_agendamento = 0091));
+INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',(SELECT REF(f) FROM tb_promocao f WHERE f.codigo_promocional = 330011),(SELECT REF(f) FROM tb_agendamento f WHERE f.id_agendamento = 1235));
+INSERT INTO tb_realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',(SELECT REF(f) FROM tb_promocao f WHERE f.codigo_promocional = 330011),(SELECT REF(f) FROM tb_agendamento f WHERE f.id_agendamento = 1515));
 
 --gera
 INSERT INTO tb_gera (id_gera,data_gera,hora_gera) VALUES (1234,to_date('09/04/2022','dd/mm/yy'),'9:30');
