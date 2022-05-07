@@ -31,32 +31,32 @@ INSERT INTO tb_cliente (cpf,data_cadastro) VALUES ('444.222.333.56', to_date('18
 
 --cartao_de_milhas
 
-INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('08/07/2020','dd/mm/yy'),3000,'222.333.444.57');
-INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('01/01/2016','dd/mm/yy'),2000,'105.210.555.70');
-INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('24/10/2018','dd/mm/yy'),1800,'777.022.333.88');
-INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('22/11/2019','dd/mm/yy'),2780,'444.222.333.56');
+INSERT INTO tb_lista_cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('08/07/2020','dd/mm/yy'),3000,'222.333.444.57');
+INSERT INTO tb_lista_cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('01/01/2016','dd/mm/yy'),2000,'105.210.555.70');
+INSERT INTO tb_lista_cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('24/10/2018','dd/mm/yy'),1800,'777.022.333.88');
+INSERT INTO tb_lista_cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('22/11/2019','dd/mm/yy'),2780,'444.222.333.56');
 
 --atendente
 
-INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('111.222.333.44',574);
-INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('011.222.333.23',485);
-INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('555.222.333.44',574);
+INSERT INTO tb_atendente (cpf,clientes_atendidos) VALUES ('111.222.333.44',574);
+INSERT INTO tb_atendente (cpf,clientes_atendidos) VALUES ('011.222.333.23',485);
+INSERT INTO tb_atendente (cpf,clientes_atendidos) VALUES ('555.222.333.44',574);
 
 --piloto
 
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23',null ,15000);
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('888.010.111.31',null ,20100);
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('999.111.434.95','333.222.333.23',7100);
-INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('855.777.032.75','888.010.111.31',11500);
+INSERT INTO tb_piloto (cpf,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23',null ,15000);
+INSERT INTO tb_piloto (cpf,cpf_copiloto,horas_de_voo) VALUES('888.010.111.31',null ,20100);
+INSERT INTO tb_piloto (cpf,cpf_copiloto,horas_de_voo) VALUES('999.111.434.95',(SELECT REF(f) FROM tb_piloto f WHERE f.cpf = '333.222.333.23'),7100);
+INSERT INTO tb_piloto (cpf,cpf_copiloto,horas_de_voo) VALUES('855.777.032.75',(SELECT REF(f) FROM tb_piloto f WHERE f.cpf = '888.010.111.31'),11500);
 
 --modelo_aeronave
 
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Gulfstream G500',50,1000,700, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Bombardier Global',60,1600,850, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Embraer E-195',150,2000,800, null );
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Dassault',15,1000,700, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Pilatus PC-24',10,500,750, null);
-INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Phenom 300',50,30000,850, null);
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Gulfstream G500',50,1000,700, null);
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Bombardier Global',60,1600,850, null);
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Embraer E-195',150,2000,800, null );
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Dassault',15,1000,700, null);
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Pilatus PC-24',10,500,750, null);
+INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Phenom 300',50,30000,850, null);
 
 --aeronave
 
