@@ -105,7 +105,7 @@ CREATE TABLE tb_passagem OF tp_passagem(
     data_de_volta NOT NULL
 );
 /
---⚠️ nao passou --
+-- ✅ --
 CREATE TABLE tb_realiza OF tp_realiza(
     cpf_cliente_realiza_promo PRIMARY KEY,
     codigo_promocional_realiza SCOPE IS tb_promocao,
@@ -137,7 +137,7 @@ CREATE TABLE tb_gera OF tp_gera(
 6. MAP MEMBER FUNCTION ✅
 7. CONSTRUCTOR FUNCTION ✅
 8. OVERRIDING MEMBER ✅
-9. FINAL MEMBER ⚠️ (acho que ja foi no final map member)
+9. FINAL MEMBER ✅
 10. NOT INSTANTIABLE TYPE/MEMBER ✅
 11. HERANÇA DE TIPOS (UNDER/NOT FINAL) ✅
 12. ALTER TYPE ✅
@@ -145,8 +145,8 @@ CREATE TABLE tb_gera OF tp_gera(
 14. WITH ROWID REFERENCES ✅
 15. REF ✅
 16. SCOPE IS ✅
-17. INSERT INTO 
-18. VALUE 
+17. INSERT INTO ✅
+18. VALUE ✅
 19. VARRAY ✅
 20. NESTED TABLE 
 
