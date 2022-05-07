@@ -37,13 +37,12 @@ CREATE TABLE tb_cliente of tp_cliente(
     data_cadastro NOT NULL
 );
 /
--- ⚠️ nao passou --
-CREATE TABLE tb_lista_cartao_de_milhas OF tp_cartao_de_milhas(
-    cpf_cliente_cm PRIMARY KEY,
-    lista_cartao_de_milhas SCOPE IS tp_nt_cartao_de_milhas,
-    data_de_emissao NOT NULL,
-    numero_de_milhas NOT NULL
-)NESTED TABLE lista_cartao_de_milhas STORE AS  tp_nt_cartao_de_milhas;
+-- ✅ --
+CREATE TABLE tb_lista_cartao_de_milhas(
+    cpf_cliente_cm VARCHAR(14),
+    lista_cartao_de_milhas tp_nt_cartao_de_milhas  
+) NESTED TABLE lista_cartao_de_milhas STORE AS  tb_nt_lista_cartao_de_milhas;
+
 /
 -- ✅ --
 CREATE TABLE tb_atendente OF tp_atendente(
