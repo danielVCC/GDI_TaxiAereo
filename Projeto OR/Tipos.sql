@@ -2,7 +2,7 @@
 -- TELEFONE (USANDO VARRAY) --
 -- TIPO VARRAY QUE POSSIBILITA INSERÇÃO E ARMAZENAMENTO DE MÚLTIPLOS TELEFONES --
 CREATE OR REPLACE TYPE tp_telefone AS OBJECT (
-    cpf_pessoa_telefone VARCHAR2 (12),
+    cpf_pessoa_telefone VARCHAR2 (20),
     ddd NUMBER,
     numero NUMBER
 
