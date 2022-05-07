@@ -144,15 +144,15 @@ CREATE OR REPLACE TYPE tp_piloto UNDER tp_funcionario (
 
 -- ✅ --
 -- CARTAO DE MILHAS --
-CREATE OR REPLACE TYPE tb_cartao_de_milhas UNDER tp_cliente (
+CREATE OR REPLACE TYPE tp_cartao_de_milhas UNDER tp_cliente (
    
     data_de_emissao DATE,
     numero_de_milhas NUMBER,
     cliente REF tp_cliente
 
 );
-
-
+/
+CREATE TYPE tp_nt_cartao_de_milhas AS TABLE OF tp_cartao_de_milhas;
 /
 
 -- ✅ --
@@ -312,7 +312,7 @@ CREATE OR REPLACE TYPE tp_gera AS OBJECT (
 6. MAP MEMBER FUNCTION ✅
 7. CONSTRUCTOR FUNCTION ✅
 8. OVERRIDING MEMBER ✅
-9. FINAL MEMBER ⚠️ (acho que ja foi no final map member)
+9. FINAL MEMBER ✅
 10. NOT INSTANTIABLE TYPE/MEMBER ✅
 11. HERANÇA DE TIPOS (UNDER/NOT FINAL) ✅
 12. ALTER TYPE ✅
@@ -320,8 +320,8 @@ CREATE OR REPLACE TYPE tp_gera AS OBJECT (
 14. WITH ROWID REFERENCES ✅
 15. REF ✅
 16. SCOPE IS ✅
-17. INSERT INTO 
-18. VALUE 
+17. INSERT INTO ✅ 
+18. VALUE ✅
 19. VARRAY ✅
 20. NESTED TABLE 
 
