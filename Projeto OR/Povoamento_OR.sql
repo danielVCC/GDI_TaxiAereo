@@ -60,13 +60,13 @@ INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, cat
 
 --aeronave
 
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (00010,'Embraer E-195');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (10022,'Gulfstream G500');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (20333,'Bombardier Global');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (30414,'Dassault');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (30421,'Dassault');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (40525,'Pilatus PC-24');
-INSERT INTO aeronave (id_aeronave,modelo) VALUES (51434,'Phenom 300');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (00010,'Embraer E-195');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (10022,'Gulfstream G500');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (20333,'Bombardier Global');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30414,'Dassault');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30421,'Dassault');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (40525,'Pilatus PC-24');
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (51434,'Phenom 300');
 
 --hangar
 
