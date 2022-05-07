@@ -1,135 +1,129 @@
-INSERT INTO tb_cargo(id_cargo, nome_cargo, salario) VALUES (01, 'Gerente', 6000);
+--pessoa
+
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('111.222.333.44','Henrique Sakane','00000-105','Rua da esquina',705,'apto 701','Tamarineira','Pernambuco','Recife');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('011.222.333.23','Daniel Victor','02200-123','Rua vicente',523,'apto 102','Baixo','Pernambuco','Olinda');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('555.222.333.44','José Da Silva','45600-105','Rua agrestina',90,'apto 28','Casa forte','Rio de Janeiro','Xelti');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('333.222.333.23','Arthur Santos','026768-123','Rua manto',230,'apto 378','Inter','Ceara','Olvi');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('444.222.333.56','Victor Relo','045668-123','Rua Alfa',34,'apto 46','Boa vista','Pernambuco','Filo');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('222.333.444.57','João Almeida','745760-134','Rua Alcântara',127,'apto 87','Madalena','Pernambuco','Recife');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('105.210.555.70','Fabio Carvalho','502788-013','Rua Benfica',108,'apto 40','Derby','Pernambuco','Recife');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('777.022.333.88','André Souza','905878-145','Rua América',35,'apto 63','Bela Vista','Pernambuco','Caruaru');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('888.010.111.31','Carlos Costa','301067-301','Rua Colombo',107,'apto 80','Carajas','Sao Paulo','Campinas');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('999.111.434.95','Bruno Goes','578003-403','Rua Omega',205,'apto 50','Nova Asa','Alagoas','Arapiraca');
+INSERT INTO pessoa (cpf,nome,cep,logradouro,numero,complemento,bairro,estado,cidade) VALUES ('855.777.032.75','Paulo Lima','487503-362','Rua Beta',302,'apto 13','Pombos','Pará','Belém');
+
+--telefone
+
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('111.222.333.44', 81, 989898989);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('011.222.333.23', 81, 987878787);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('555.222.333.44', 21, 976767676);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('333.222.333.23', 88, 998967548);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('444.222.333.56', 81, 998345459);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('222.333.444.57', 81, 998735459);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('105.210.555.70', 81, 979055705);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('777.022.333.88', 81, 998305781);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('888.010.111.31', 11, 999900123);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('999.111.434.95', 82, 988057430);
+INSERT INTO telefone (cpf_pessoa_telefone, ddd, numero) VALUES ('855.777.032.75', 91, 979568708);
+
+--funcionario
+
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('111.222.333.44','Manhã',1200);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('011.222.333.23','Tarde',1500);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('555.222.333.44','Noite',1700);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('333.222.333.23','Tarde',3000);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('888.010.111.31','Noite',3000);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('999.111.434.95','Tarde',2100);
+INSERT INTO funcionario (cpf_funcionario, turno_de_trabalho,salario) VALUES ('855.777.032.75','Manhã',2100);
+
+--cliente
+
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('222.333.444.57', to_date('05/07/2020', 'dd/mm/yy'));
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('105.210.555.70', to_date('15/12/2015', 'dd/mm/yy'));
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('777.022.333.88', to_date('20/10/2018', 'dd/mm/yy'));
+INSERT INTO cliente (cpf_cliente,data_cadastro) VALUES ('444.222.333.56', to_date('18/11/2019', 'dd/mm/yy'));
+
+--cartao_de_milhas
+
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('08/07/2020','dd/mm/yy'),3000,'222.333.444.57');
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('01/01/2016','dd/mm/yy'),2000,'105.210.555.70');
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('24/10/2018','dd/mm/yy'),1800,'777.022.333.88');
+INSERT INTO cartao_de_milhas (data_de_emissao,numero_de_milhas,cpf_cliente_cm) VALUES (to_date('22/11/2019','dd/mm/yy'),2780,'444.222.333.56');
+
+--atendente
+
+INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('111.222.333.44',574);
+INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('011.222.333.23',485);
+INSERT INTO atendente (cpf_atendente,clientes_atendidos) VALUES ('555.222.333.44',574);
+
+--piloto
+
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('333.222.333.23',null ,15000);
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('888.010.111.31',null ,20100);
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('999.111.434.95','333.222.333.23',7100);
+INSERT INTO piloto (cpf_piloto,cpf_copiloto,horas_de_voo) VALUES('855.777.032.75','888.010.111.31',11500);
+
+--modelo_aeronave
+
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Gulfstream G500',50,1000,700, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Bombardier Global',60,1600,850, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Embraer E-195',150,2000,800, null );
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Dassault',15,1000,700, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Pilatus PC-24',10,500,750, null);
+INSERT INTO modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, categoria_Velociade) VALUES ('Phenom 300',50,30000,850, null);
+
+--aeronave
+
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (00010,'Embraer E-195');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (10022,'Gulfstream G500');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (20333,'Bombardier Global');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (30414,'Dassault');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (30421,'Dassault');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (40525,'Pilatus PC-24');
+INSERT INTO aeronave (id_aeronave,modelo) VALUES (51434,'Phenom 300');
+
+--hangar
+
+INSERT INTO hangar (id_hangar,capacidade) VALUES (101,4);
+INSERT INTO hangar (id_hangar,capacidade) VALUES (202,7);
+
+--promocao
+
+INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (000001,to_date('08/05/2022','dd/mm/yy'),20);
+INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (220002,to_date('27/08/2022','dd/mm/yy'),50);
+INSERT INTO promocao (codigo_promocional,data_de_termino,desconto) VALUES (330011,to_date('30/09/2022','dd/mm/yy'),10);
+
+--agendamento
+
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('222.333.444.57','111.222.333.44','10:43',0091,to_date('25/02/2022','dd/mm/yy'),300);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('105.210.555.70','011.222.333.23','13:35',1235,to_date('10/03/2022','dd/mm/yy'),400);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('777.022.333.88','011.222.333.23','16:20',1515,to_date('18/03/2022','dd/mm/yy'),600);
+INSERT INTO agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('444.222.333.56','555.222.333.44','19:50',4545,to_date('31/03/2022','dd/mm/yy'),1300);
 
-INSERT INTO tb_cargo(id_cargo, nome_cargo, salario) VALUES (02, 'Caixa', 2000);
+--passagem
 
-INSERT INTO tb_cargo(id_cargo, nome_cargo, salario) VALUES (03, 'Lojista', 4000);
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (0091,'Recife','Salvador',to_date('09/04/2022','dd/mm/yy'),'10:00',to_date('12/04/2022','dd/mm/yy'));
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (1235,'Recife','Curitiba',to_date('10/05/2022','dd/mm/yy'),'15:00',to_date('15/06/2022','dd/mm/yy'));
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (1515,'Recife','Brasilia',to_date('02/06/2022','dd/mm/yy'),'09:30',to_date('04/10/2022','dd/mm/yy'));
+INSERT INTO passagem (id_passagem,origem,destino,data_de_ida,horario_passagem,data_de_volta) VALUES (4545,'Recife','Brasilia',to_date('02/06/2022','dd/mm/yy'),'11:30',to_date('16/09/2022','dd/mm/yy'));
 
-INSERT INTO tb_funcionario(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, cargo) VALUES ('111.222.333.44', 'José da Silva', to_date('01/01/1969', 'dd/mm/yy'), tp_telefones((tp_telefone('81', '99999-9999')), (tp_telefone('81', '99999-8888'))), '00000-010', 'Rua da esquina', 123, 'apt. 1', 'esquina', (SELECT REF(c) FROM tb_cargo c WHERE c.id_cargo = 1));
+--realiza
 
-INSERT INTO tb_funcionario(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, cargo, supervisor) VALUES ('222.333.444-55', 'Ana Sobral', to_date('24/04/1987', 'dd/mm/yy'), tp_telefones((tp_telefone('81', '88888-8888')), (tp_telefone('81', '88888-7777'))), '11111-121', 'Rua da entrada', 234, 'apt. 401', 'entrada',(SELECT REF(c) FROM tb_cargo c WHERE c.id_cargo = 3), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '111.222.333.44'));
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('222.333.444.57',000001,0091);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('105.210.555.70',330011,1235);
+INSERT INTO realiza (cpf_cliente_realiza_promo,codigo_promocional_realiza,id_agendamento_realiza) VALUES ('777.022.333.88',330011,1515);
 
-INSERT INTO tb_funcionario(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, cargo, supervisor) VALUES ('333.444.555-66', 'Lucas Cavalcanti', to_date('14/03/1992', 'dd/mm/yy'), tp_telefones((tp_telefone('81', '77777-7777')),(tp_telefone('81', '77777-6666'))), '22222-232', 'Rua da saida', 345, 'Casa 12', 'saida', (SELECT REF(c) FROM tb_cargo c WHERE c.id_cargo = 2), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '111.222.333.44'));
+--gera
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (1234,to_date('09/04/2022','dd/mm/yy'),'9:30');
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (4321,to_date('10/05/2022','dd/mm/yy'),'14:00');
+INSERT INTO gera (id_gera,data_gera,hora_gera) VALUES (5555,to_date('02/06/2022','dd/mm/yy'),'7:30');
 
-INSERT INTO tb_cliente(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, data_cadastro) VALUES ('444.555.666-77', 'Matheus Cabral', to_date('08/09/1988', 'dd/mm/yy'), tp_telefones(tp_telefone('81', '66666-6666')), '33333-343', 'Avenida rosquinha', 456, 'Bloco 1 Apt. 201', 'rosquinha', to_date('05/07/2020', 'dd/mm/yy'));
 
-INSERT INTO tb_cliente(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, data_cadastro) VALUES ('555.666.777-88', 'Maria Augusta', to_date('19/08/1988', 'dd/mm/yy'), tp_telefones(tp_telefone('81', '55555-5555')), '44444-454', 'Rua do povo', 567, 'apt. 902', 'povo', to_date('08/10/2020', 'dd/mm/yy'));
+--estaciona
 
-INSERT INTO tb_cliente(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, data_cadastro) VALUES ('666.777.888-99', 'José Conceição', to_date('21/09/1997', 'dd/mm/yy'), tp_telefones(tp_telefone('81', '44444-4444')), '55555-565', 'Rua Fernando Antônio', 678, 'apt. 104', 'rosquinha', to_date('25/05/2021', 'dd/mm/yy'));
-
-INSERT INTO tb_cliente(cpf, nome_completo, data_nascimento, telefones, cep, logradouro, numero, complemento, bairro, data_cadastro) VALUES ('777.888.999-00', 'Maria Augusta Neto', to_date('01/10/1996', 'dd/mm/yy'), tp_telefones(tp_telefone('81', '33333-3333')), '66666-676', 'Avenida João Gomes', 7890, 'apt. 305', 'esquina', to_date('13/11/2021', 'dd/mm/yy'));
-
-INSERT INTO tb_estoque(id_estoque, qtd_produtos, status_estoque) VALUES (1, 120, 'Com espaço');
-
-INSERT INTO tb_estoque(id_estoque, qtd_produtos, status_estoque) VALUES (2, 300, 'Cheio');
-
-INSERT INTO tb_estoque(id_estoque, qtd_produtos, status_estoque) VALUES (3, 260, 'Com espaço');
-
-INSERT INTO tb_estoque(id_estoque, qtd_produtos, status_estoque) VALUES (4, 00, 'Vazio');
-
-INSERT INTO tb_estoque(id_estoque, qtd_produtos, status_estoque) VALUES (5, 00, 'Vazio');
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (1, 'chocolate', 'doce', 3.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (2, 'pastilha', 'doce', 2.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (3, 'bombom', 'doce', 1.50);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (4, 'salgadinho', 'salgado', 4.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (5, 'coxinha', 'salgado', 4.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (6, 'empada', 'salgado', 4.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (7, 'folhado', 'salgado', 5.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (8, 'pão pizza', 'salgado', 6.00);
-
-INSERT INTO tb_produto(id_produto, nome, categoria, preco) VALUES (9, 'água', 'bebida', 3.00);
-
-INSERT INTO tb_promocao(codigo_promocional, valor_desconto, data_termino) VALUES (00, 5, to_date('31/12/2022', 'dd/mm/yy'));
-
-INSERT INTO tb_promocao(codigo_promocional, valor_desconto, data_termino) VALUES (01, 10, to_date('01/01/2022', 'dd/mm/yy'));
-
-INSERT INTO tb_promocao(codigo_promocional, valor_desconto, data_termino) VALUES (02, 15, to_date('26/12/2021', 'dd/mm/yy'));
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (1, to_date('05/07/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'), (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '444.555.666-77'));
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (2, to_date('15/08/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'), (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '555.666.777-88'));
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (3, to_date('08/10/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'),(SELECT REF(c) FROM tb_cliente c WHERE c.cpf ='444.555.666-77') );
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (4, to_date('09/10/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'),(SELECT REF(c) FROM tb_cliente c WHERE c.cpf ='666.777.888-99') );
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (5, to_date('24/10/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'),(SELECT REF(c) FROM tb_cliente c WHERE c.cpf ='777.888.999-00') );
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (6, to_date('02/11/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'),(SELECT REF(c) FROM tb_cliente c WHERE c.cpf ='777.888.999-00') );
-
-INSERT INTO tb_pedido(id_pedido, data_pedido, cpf_funcionario_pedido, cpf_cliente_pedido) VALUES (7, to_date('10/11/2020', 'dd/mm/yy'), (SELECT REF(f) FROM tb_funcionario f WHERE f.cpf = '333.444.555-66'),(SELECT REF(c) FROM tb_cliente c WHERE c.cpf ='777.888.999-00') );
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 1),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '444.555.666-77'), 00);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 2),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '555.666.777-88'), 00);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 3),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '444.555.666-77'), 01);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 4),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '666.777.888-99'), 00);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 5),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '777.888.999-00'), 02);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 6),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '777.888.999-00'), 00);
-
-INSERT INTO tb_realizacao(id_pedido_realizacao, cpf_cliente_realizacao, codigo_promocional_realizacao) VALUES ((SELECT REF (p) FROM tb_pedido p WHERE p.id_pedido = 7),  (SELECT REF(c) FROM tb_cliente c WHERE c.cpf = '777.888.999-00'), 00);
-
-INSERT INTO tb_lista_cartao_fidelidade VALUES ('444.555.666-77', tp_nt_cartao_fidelidade(tp_cartao_fidelidade(to_date('05/07/2020', 'dd/mm/yy')), tp_cartao_fidelidade(to_date('08/10/2020', 'dd/mm/yy'))));
-
-INSERT INTO tb_lista_cartao_fidelidade VALUES ('555.666.777-88', tp_nt_cartao_fidelidade(tp_cartao_fidelidade(to_date('15/08/2020', 'dd/mm/yy'))));
-
-INSERT INTO tb_lista_cartao_fidelidade VALUES ('777.888.999-00', tp_nt_cartao_fidelidade(tp_cartao_fidelidade(to_date('24/10/2020','dd/mm/yy')), tp_cartao_fidelidade(to_date('02/11/2020', 'dd/mm/yy')), tp_cartao_fidelidade(to_date('10/11/2020', 'dd/mm/yy'))));
-
-INSERT INTO tb_contem VALUES (3, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 1), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 1));
-
-INSERT INTO tb_contem VALUES (2, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 1), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 3));
-
-INSERT INTO tb_contem VALUES (2, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 1), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 4));
-
-INSERT INTO tb_contem VALUES (6, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 2), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 6));
-
-INSERT INTO tb_contem VALUES (3, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 2), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 5));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 3), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 4));
-
-INSERT INTO tb_contem VALUES (4, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 4), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 7));
-
-INSERT INTO tb_contem VALUES (2, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 4), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 7));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 5), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 3));
-
-INSERT INTO tb_contem VALUES (2, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 5), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 6));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 6), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 5));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 6), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 6));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 6), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 8));
-
-INSERT INTO tb_contem VALUES (1, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 6), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 9));
-
-INSERT INTO tb_contem VALUES (3, (SELECT REF (pe) FROM tb_pedido pe WHERE pe.id_pedido = 7), (SELECT REF (pr) FROM tb_produto pr WHERE pr.id_produto = 2));
-
-INSERT INTO tb_armazena VALUES (to_date('03/02/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 1), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 1), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('20/02/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 1), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 2), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('14/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 1), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 3), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 2), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 4), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 2), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 5), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 2), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 6), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 2), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 7), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 2), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 8), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
-
-INSERT INTO tb_armazena VALUES (to_date('19/03/2020', 'dd/mm/yy'), (SELECT REF (es) FROM tb_estoque es WHERE es.id_estoque = 3), (SELECT REF (p) FROM tb_produto p WHERE p.id_produto = 9), (SELECT REF (f) FROM tb_funcionario f WHERE f.cpf = '222.333.444-55'));
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (00010,101);
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (10022,202);
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (20333,202);
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (30414,101);
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (40525,202);
+INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (51434,202);
