@@ -109,9 +109,9 @@ INSERT INTO tb_gera (id_gera,data_gera,hora_gera) VALUES (5555,to_date('02/06/20
 
 --estaciona
 
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (00010,101);
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (10022,202);
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (20333,202);
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (30414,101);
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (40525,202);
-INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (51434,202);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (00010,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 101));
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (10022,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 202));
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (20333,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 202));
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (30414,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 101));
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (40525,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 202));
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (51434,(SELECT REF(f) FROM tb_hangar f WHERE f.id_hangar = 202));
