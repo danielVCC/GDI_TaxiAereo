@@ -105,22 +105,21 @@ END;
 
 
 /
-
---⚠️ nao passou no live SQL--
+-- ✅ --
 -- ATENDENTE --
 -- HERDA DE FUNCIONÁRIO --
 CREATE OR REPLACE TYPE tp_atendente UNDER tp_funcionario (
 
     clientes_atendidos NUMBER,
-    FINAL MAP MEMBER FUNCTION qntd_clientes_atendidos RETURN NUMBER
+    MEMBER FUNCTION qntd_clientes_atendidos RETURN NUMBER
 );
 
 /
 
---⚠️ nao passou no live SQL--
--- QNTD_CLIENTES_ATENDIDOS: FINAL MAP MEMBER QUE RETORNA A QUANTIDADE DE TELEFONES CADASTRADOS DE UM CLIENTE --
+-- ✅ --
+-- QNTD_CLIENTES_ATENDIDOS: MEMBER QUE RETORNA A QUANTIDADE DE TELEFONES CADASTRADOS DE UM CLIENTE --
 CREATE OR REPLACE TYPE BODY tp_atendente AS 
-FINAL MAP MEMBER FUNCTION qntd_clientes_atendidos RETURN NUMBER IS
+MEMBER FUNCTION qntd_clientes_atendidos RETURN NUMBER IS
 selfCnt NUMBER;
     BEGIN
         SELECT COUNT(*) INTO selfCnt
