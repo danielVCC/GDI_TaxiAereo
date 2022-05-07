@@ -60,13 +60,15 @@ INSERT INTO tb_modelo_aeronave (tipo_aeronave,passageiros,carga, velocidade, cat
 
 --aeronave
 
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (00010,'Embraer E-195');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (10022,'Gulfstream G500');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (20333,'Bombardier Global');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30414,'Dassault');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30421,'Dassault');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (40525,'Pilatus PC-24');
-INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (51434,'Phenom 300');
+
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (00010,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Embraer E-195'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (10022,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Gulfstream G500'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (20333,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Bombardier Global'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30414,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Dassault'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (30421,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Dassault'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (40525,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Pilatus PC-24'));
+INSERT INTO tb_aeronave (id_aeronave,modelo) VALUES (51434,(SELECT REF(f) FROM tb_modelo_aeronave f WHERE f.tipo_aeronave = 'Phenom 300'));
+
 
 --hangar
 
@@ -81,10 +83,10 @@ INSERT INTO tb_promocao (codigo_promocional,data_de_termino,desconto) VALUES (33
 
 --agendamento
 
-INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('222.333.444.57','111.222.333.44','10:43',0091,to_date('25/02/2022','dd/mm/yy'),300);
-INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('105.210.555.70','011.222.333.23','13:35',1235,to_date('10/03/2022','dd/mm/yy'),400);
-INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('777.022.333.88','011.222.333.23','16:20',1515,to_date('18/03/2022','dd/mm/yy'),600);
-INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ('444.222.333.56','555.222.333.44','19:50',4545,to_date('31/03/2022','dd/mm/yy'),1300);
+INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ((SELECT REF(f) FROM tb_cliente f WHERE f.cpf = '222.333.444.57'),(SELECT REF(f) FROM tb_atendente f WHERE f.cpf = '111.222.333.44'),'10:43',0091,to_date('25/02/2022','dd/mm/yy'),300);
+INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ((SELECT REF(f) FROM tb_cliente f WHERE f.cpf = '105.210.555.70'),(SELECT REF(f) FROM tb_atendente f WHERE f.cpf = '011.222.333.23'),'13:35',1235,to_date('10/03/2022','dd/mm/yy'),400);
+INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ((SELECT REF(f) FROM tb_cliente f WHERE f.cpf = '777.022.333.88'),(SELECT REF(f) FROM tb_atendente f WHERE f.cpf = '011.222.333.23'),'16:20',1515,to_date('18/03/2022','dd/mm/yy'),600);
+INSERT INTO tb_agendamento (cpf_cliente_agendamento,cpf_atendente_agendamento,hora,id_agendamento,data_agendamento,milhas_geradas) VALUES ((SELECT REF(f) FROM tb_cliente f WHERE f.cpf = '444.222.333.56'),(SELECT REF(f) FROM tb_atendente f WHERE f.cpf = '555.222.333.44'),'19:50',4545,to_date('31/03/2022','dd/mm/yy'),1300);
 
 --passagem
 
@@ -107,9 +109,9 @@ INSERT INTO tb_gera (id_gera,data_gera,hora_gera) VALUES (5555,to_date('02/06/20
 
 --estaciona
 
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (00010,101);
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (10022,202);
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (20333,202);
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (30414,101);
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (40525,202);
-INSERT INTO estaciona (cod_aeronave,cod_hangar) VALUES (51434,202);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (00010,101);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (10022,202);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (20333,202);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (30414,101);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (40525,202);
+INSERT INTO tb_estaciona (cod_aeronave,cod_hangar) VALUES (51434,202);
