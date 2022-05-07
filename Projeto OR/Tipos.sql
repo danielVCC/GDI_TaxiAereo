@@ -144,14 +144,12 @@ CREATE OR REPLACE TYPE tp_piloto UNDER tp_funcionario (
 
 -- ✅ --
 -- CARTAO DE MILHAS --
-CREATE OR REPLACE TYPE tp_cartao_de_milhas UNDER tp_cliente (
-   
-    data_de_emissao DATE,
-    numero_de_milhas NUMBER,
-    cliente REF tp_cliente
-
+CREATE OR REPLACE TYPE tp_cartao_de_milhas AS OBJECT(
+    data_emissao DATE,
+    numero_de_milhas NUMBER
 );
 /
+-- ✅ --
 CREATE TYPE tp_nt_cartao_de_milhas AS TABLE OF tp_cartao_de_milhas;
 /
 
