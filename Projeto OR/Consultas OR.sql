@@ -4,4 +4,4 @@ from  tb_realiza a;
 
 --Selecionar a velocidade das aeronaves presentes em modelo_aeronave atravez da tabela aeronave
 select deref(a.modelo).velocidade as aeronave  
-from  tb_modelo_aeronave a;
+from  tb_aeronave a;
