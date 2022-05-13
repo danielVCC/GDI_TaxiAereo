@@ -16,15 +16,6 @@ DROP TABLE passagem;
 DROP TABLE gera;
 
 -- ✅ --
- CREATE TABLE tb_telefone OF tp_telefone(
-     cpf_pessoa_telefone PRIMARY KEY,
-     ddd NOT NULL,
-     numero NOT NULL
-);
-
-/
-
--- ✅ --
 CREATE TABLE tb_funcionario OF tp_funcionario(
     cpf PRIMARY KEY,
     turno_de_trabalho NOT NULL,
