@@ -42,8 +42,8 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     
     cpf VARCHAR2(15),
     nome VARCHAR2(40),
-    telefone tp_telefone, -- REF tp_telefone ? --
-    endereco tp_endereco, -- REF tp_endereco ? --
+    telefone tp_telefone, 
+    endereco tp_endereco,
     MEMBER PROCEDURE print_info
     
 ) NOT FINAL NOT INSTANTIABLE;
