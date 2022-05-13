@@ -41,7 +41,7 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
     
     cpf VARCHAR2(15),
     nome VARCHAR2(40),
-    telefone tp_telefone, 
+    telefone tp_arr_telefone, 
     endereco tp_endereco,
     MEMBER PROCEDURE print_info
     
