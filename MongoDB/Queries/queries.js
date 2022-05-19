@@ -26,7 +26,7 @@ db.tickets.aggregate([
               return `Você pagou a encomenda no valor de ${valor}`;
             },
             args: ["$valor"],
-            lang: "js",
+            lang: "mongodb",
           },
         },
       },
@@ -56,10 +56,9 @@ db.autor.find({
 
 // nova ticket de Carlos Manoel CHECKKKKKKK
   db.tickets.save({
-    museu: [5],
+    museu: 5,
     data_entrada: "25/06/2021",
     valor: 45,
-    visitantes: [3],
-    funcionarios: [4]
+    visitantes: 3,
+    funcionarios: 4
   });
-
