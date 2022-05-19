@@ -1,6 +1,6 @@
 //criando a colecao de Tickets
 
-db.Tickets.insertMany([
+db.tickets.insertMany([
   {
     _id: 1,
     museu: [1],
