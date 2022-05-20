@@ -87,6 +87,15 @@ db.tickets.find({
 // Pegar os três tickets de maior valor
 db.tickets.find().sort({ valor: -1 }).limit(3);
 
+// max
+db.funcionarios.aggregate([
+    {
+        $group: {
+            _id: "$sexo", MaxSalario:{$max: "$salario"}
+        }
+    }
+]);
+
 
 /*
 CHECKLIST
