@@ -23,7 +23,7 @@ db.tickets.aggregate([
         message: {
           $function: {
             body: function (valor) {
-              return `Você pagou a encomenda no valor de ${valor}`;
+              return `Você pagou o ticket no valor de ${valor}`;
             },
             args: ["$valor"],
             lang: "mongodb",
