@@ -27,4 +27,4 @@ Gerenciamento de Dados e Informação - 2021.2
 
 ### Atividades - Projeto MongoDB
 - [x] Scripts de criação e de povoamento 
-- [ ] Consultas sobre tabelas 
+- [x] Consultas sobre tabelas 
