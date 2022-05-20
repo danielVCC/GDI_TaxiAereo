@@ -1,6 +1,6 @@
 //use ('test');
 
-// Encontre os tickets que pertence ao visitante de id 2
+// Encontre os tickets que pertence ao visitante de id 3
 db.tickets.find({ visitantes: { $exists: true, $all: [3] } }).pretty();
 
 // Encontre os visitantes que possuem 2 endereços
