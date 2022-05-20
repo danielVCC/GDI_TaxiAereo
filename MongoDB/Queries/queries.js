@@ -54,7 +54,18 @@ db.autor.find({
     },
 }).pretty();
 
-// nova ticket de Carlos Manoel CHECKKKKKKK
+//Aplicar um desconto de 10% no valor do ticket
+var map = function () {
+    emit(this.valor);
+};
+var reduce = function (valor) {
+    resultadoDesconto = (valor)-valor*0.1
+    return resultadoDesconto;
+};
+
+db.tickets.mapReduce(map, reduce, { out: "Valor apos desconto:" });
+
+// novo ticket de Carlos Manoel
   db.tickets.save({
     museu: 5,
     data_entrada: "25/06/2021",
