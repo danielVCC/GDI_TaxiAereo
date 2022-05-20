@@ -77,6 +77,16 @@ db.tickets.mapReduce(map, reduce, { out: "Valor apos desconto:" });
 // Atualizar o cargo do autor de nome "Luana vieira"  
 db.autor.update({ nomeAutor: "Luana Vieira" }, { $set: { cargo: "Escultora" } });
 
+// Retorna os tickets com valores maiores que 20
+db.tickets.find({
+    $where: function () {
+      return this.valor > 20;
+    },
+ });
+
+// Pegar os três tickets de maior valor
+db.tickets.find().sort({ valor: -1 }).limit(3);
+
 
 /*
 CHECKLIST
