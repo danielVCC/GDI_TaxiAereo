@@ -106,6 +106,60 @@ db.obraArte.update(
     }
 );
 
+// Media salarial agrupado por genero
+db.funcionarios.aggregate([{ $group: {_id:"$sexo", MediaSalarial: {$avg:"$salario"}} }]);
+
+// Listar Nome, Total de tickets, valor total e médio dos tickets dos visitantes
+db.tickets.aggregate([
+    {
+        $lookup: {
+            from: "visitantes",
+            localField: "visitantes",
+            foreignField: "_id",
+            as: "visitantes_info",
+        }
+    },
+    {
+        $unwind: "$visitantes_info",
+    },
+    {
+        $group: {
+            _id: "$visitantes_info.nome",
+            total_tickets: { $count: {} },
+            valor_total: { $sum: "$valor" },
+            valor_medio: { $avg: "$valor" },
+        },
+    },
+    {
+        $project: {
+            _id: 0,
+            nome: "$_id",
+            total_tickets: 1,
+            valor_total: 1,
+            valor_medio: 1,
+        },
+    },
+]).pretty();
+
+// Indica a comissão de 10% nos funcionarios que ganham acima de 1400 e 30% nos outros 
+db.funcionarios.aggregate(
+    [
+        {
+            $project:
+            {
+                nome:1, 
+                salario: 1,
+                comissao:
+                {
+                    $cond: { if: { $eq: [ "$salario", 1400 ] }, then: 10, else: 30 }
+                }
+            }
+        }
+    ]
+);
+//trocar o nome da colecao funcionarios para atendentes
+db.funcionarios.renameCollection("Atendentes");
+
 
 /*
 CHECKLIST
