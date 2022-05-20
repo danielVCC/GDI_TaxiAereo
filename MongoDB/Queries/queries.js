@@ -96,6 +96,16 @@ db.funcionarios.aggregate([
     }
 ]);
 
+// adicionar altura nas medidas da Obra de arte de id 1
+db.obraArte.update(
+    { _id: 1 },
+    {
+        $addToSet: {
+            medidas: {altura: 4},
+        },
+    }
+);
+
 
 /*
 CHECKLIST
