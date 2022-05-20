@@ -74,6 +74,9 @@ db.tickets.mapReduce(map, reduce, { out: "Valor apos desconto:" });
     funcionarios: 4
   });
 
+// Atualizar o cargo do autor de nome "Luana vieira"  
+db.autor.update({ nomeAutor: "Luana Vieira" }, { $set: { cargo: "Escultora" } });
+
 
 /*
 CHECKLIST
